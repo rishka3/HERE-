@@ -1,0 +1,24 @@
+<select id="mySelect">
+  <option value="option1">Один</option>
+  <option value="option2">Два</option>
+  <option value="option3">Три</option>
+</select>
+
+<input type="radio" name="radioOptions" value="option1">Один
+<input type="radio" name="radioOptions" value="option2">Два
+<input type="radio" name="radioOptions" value="option3">Три
+
+
+
+
+
+document.getElementById('mySelect').addEventListener('change', function() {
+  let selectValue = this.value;
+  let radios = document.querySelectorAll('input[type="radio"]');
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].value === selectValue) {
+      radios[i].checked = true;
+      break;
+    }
+  }
+});
